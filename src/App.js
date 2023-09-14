@@ -1,20 +1,10 @@
 import logo from './logo.svg';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import UsuarioCobros from './pages/UsuarioCobros';
 import './App.css';
+import './pages/Demanda';
+import Dashboard from './pages/Dashboard';
 
-function Time() {
-  const [currentTime, setCurrentTime] = useState(0);
-
-  useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
-      setCurrentTime(data.time);
-    });
-  }, []);
-
-  return <p>The current time is {currentTime}.</p>;
-}
 
 function foo() {
   return {
@@ -138,7 +128,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <AsignarDemanda></AsignarDemanda>
+      <Dashboard></Dashboard>
       </header>
     </div>
   );
