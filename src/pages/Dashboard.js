@@ -1,7 +1,8 @@
 function Dashboard() {
   return <div>
     <div class="header">
-      <h1>Demandas</h1>
+    <img class="left-align" src="Logo_Banesco.png" alt="Your Image"></img>
+      <h1 class="left-align">Demandas</h1>
       </div>
 
     <div class="topnav">

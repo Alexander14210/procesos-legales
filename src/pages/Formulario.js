@@ -10,6 +10,8 @@ function Formulario() {
 
   return(
     <div className="TipoPersona">
+        <br></br>
+        <br></br>
         <h2>Formulario para asignar un caso a demandar</h2>
         <h3>Seleccione el tipo de cliente</h3>
         <input type="radio" value="natural" 
@@ -20,7 +22,7 @@ function Formulario() {
         id="juridica" onChange={handleRadioChange} checked={tipoFormulario === 'juridica'}/>
         <label >Juridica</label>
         {tipoFormulario === 'natural' && <FormularioPersonaNatural />}
-        {/* {tipoFormulario === 'juridica' && <FormularioPersonaJuridica />} */}
+        {tipoFormulario === 'juridica' && <FormularioPersonaJuridica />}
     </div>
     
   );
@@ -208,7 +210,7 @@ function FormularioPersonaJuridica() {
     method: 'POST',
     mode: 'cors', 
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ 'ClientesNaturales' : cliente, 'OperacionInicial': operacionInicial })
+    body: JSON.stringify({ 'ClientesJudiciales' : cliente, 'OperacionInicial': operacionInicial })
   };
 
   const handleSubmit = (e) => {
@@ -233,7 +235,7 @@ function FormularioPersonaJuridica() {
         <input type="text" name="apellido" id="apellido" value={cliente.apellido} onChange={handleClienteChange}/>
       </div>
       <div class="form-example">
-        <label >Ingrese la identificación: </label>
+        <label >Ingrese el R.U.C: </label>
         <input type="text" name="identificacion" id="identificacion" value={cliente.identificacion} onChange={handleClienteChange}/>
       </div>
       <div class="form-example">

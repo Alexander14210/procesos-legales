@@ -28,6 +28,12 @@ img {
   margin-bottom: 10px;
 }
 
+.left-align {
+  text-align: left;
+  float: left; /* This will make the elements float to the left */
+  margin-right: 20px; /* Add some margin to separate the image and text */
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -42,11 +48,6 @@ img {
 
 
 
-.header {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
 
 /* Style the top navigation bar */
 .topnav {
