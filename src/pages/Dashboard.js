@@ -5,14 +5,9 @@ function Dashboard() {
       </div>
 
     <div class="topnav">
-      <a href="#">Link</a>
-      <a href="#">Link</a>
-      <a href="#">Link</a>
-</div>
-
-
-
-
+      <a href="#">Formulario</a>
+      <a href="#">Dashboard</a>
+    </div>
   </div>
 }
 

@@ -1,6 +1,5 @@
 import time
-from flask import Flask
-from flask import request
+from flask import Flask, redirect, url_for, request
 
 app = Flask(__name__)
 

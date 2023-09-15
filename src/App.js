@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import './pages/Demanda';
 import Dashboard from './pages/Dashboard';
+import Formulario from './pages/Formulario';
 
 
 function foo() {
@@ -69,60 +70,6 @@ function foo2() {
 }
 
 
-function AsignarDemanda(){
-
-  const [name, setName] = useState("");
-  const [cliente, setCliente] = useState({
-    'Numero de cliente': 0,
-    'Nombre': '',
-    'Apellido': '',
-    'Identificacion': '',
-    'Direccion': '',
-  });
-
-  const handleClienteChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-
-    setCliente(values => ({...values, [name]: value}));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(cliente['Numero de cliente']);
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>Ingrese el nombre del cliente:
-        <input
-          type="text" 
-          name='Nombre'
-          value={cliente.Nombre}
-          onChange={handleClienteChange}
-        />
-      </label>
-      <label>Ingrese el apellido:
-        <input
-          type="text" 
-          name='Apellido'
-          value={cliente.Apellido}
-          onChange={handleClienteChange}
-        />
-      </label>
-      <label>Ingrese la identificacion:
-        <input
-          type="text" 
-          name='Identificacion'
-          value={cliente.Identificacion}
-          onChange={handleClienteChange}
-        />
-      </label>
-      <input type="submit" />
-    </form>
-  )
-}
-
 
 function App() {
   return (
@@ -130,6 +77,8 @@ function App() {
       <header className="App-header">
       <Dashboard></Dashboard>
       </header>
+      <h2>Formulario</h2>
+      <Formulario></Formulario>
     </div>
   );
 }
