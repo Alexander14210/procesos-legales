@@ -16,10 +16,8 @@ function Time() {
 
 function AsignarDemanda(){
   const [abogado, setAbogado] = useState("ABOGADO_A");
-
   const handleChange = (event) => {
     setAbogado(event.target.value);
-    
   };
 
   const handleSubmit = (event) => {
@@ -49,7 +47,6 @@ function AsignarDemanda(){
     
   )
 }
-
 
 function Header() {
   const [name, setName] = useState("");
