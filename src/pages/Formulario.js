@@ -136,7 +136,7 @@ function FormularioPersonaNatural() {
       </div>
       <div class="form-example">
         <label >Ingrese el saldo total: </label>
-        <input type="number" name='Comision Fiduciaria' step={'any'} id='feci' value={operacionInicial['Comision Fiduciaria']} onChange={handleOperacionChange}/>
+        <input type="number" name='Saldo Total' step={'any'} id='feci' value={operacionInicial['Saldo Total']} onChange={handleOperacionChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese la fecha del ultimo pago: </label>

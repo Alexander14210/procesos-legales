@@ -11,8 +11,9 @@ def get_current_time():
     return {'time': time.time()}
 
 @app.route('/email', methods=["POST"])
-def handle_email(archivo_json, condicion):
-    rd(archivo_json, condicion)
+def handle_email(archivo_json=True, condicion=True):
+    data = request.get_json()
+    rd(data, condicion)
     return 'Enviar email'
 
 #Hacer una funcion para obtener la informacion desde la base de datos 

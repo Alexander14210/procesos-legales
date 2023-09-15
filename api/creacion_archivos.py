@@ -9,7 +9,7 @@ class ConsultaBD():
         self.db_config = {
             "host": "localhost",
             "database": "reto_innova",
-            "user": "postgres",
+            "user": "reto_innova2",
             "password": "123"
         }
         self.resultado_consulta = ''
@@ -35,6 +35,12 @@ class ConsultaBD():
 
 class CrearCertificacionSaldosAcreedores(ConsultaBD):
     def __init__(self, condicion) -> bool:
+        self.db_config = {
+            "host": "localhost",
+            "database": "reto_innova",
+            "user": "reto_innova2",
+            "password": "123"
+        }
         self.doc = docx
         self.extraer_datos_cliente_natural(condicion=condicion)
         self.crear_certificacion()
