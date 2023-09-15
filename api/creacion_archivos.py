@@ -33,11 +33,9 @@ class ConsultaBD():
         self.df = pd.read_sql_query(consulta, conexion)
         self.resultado_consulta = self.df.values.tolist()
         self.resultado_consulta[0][0] = self.resultado_consulta[0][0].strftime("%Y-%m-%d")
-        print(self.resultado_consulta)
-        #self.resultado_consulta = cursor.fetchall()
         cursor.close()
         conexion.close()
-        input()
+
 
 class CrearCertificacionSaldosAcreedores(ConsultaBD):
     def __init__(self, condicion) -> bool:
@@ -84,12 +82,12 @@ class CrearCertificacionSaldosAcreedores(ConsultaBD):
 
         #Celda de Saldo a capital
         celda_izquierda = tabla.cell(0,0)
-        celda_izquierda.width = Cm(2.3)
+        celda_izquierda.width = Cm(1.3)
         celda_izquierda.add_paragraph('Saldo a Capital')
         celda_izquierda.aligment = WD_PARAGRAPH_ALIGNMENT.LEFT
         #Celda del valor de saldo a capital
         celda_derecha = tabla.cell(0,1)
-        celda_derecha.widht = Cm(2.4)
+        celda_derecha.widht = Cm(1.4)
         celda_derecha.add_paragraph(str(self.resultado_consulta[0][7]))
         celda_derecha.aligment = WD_PARAGRAPH_ALIGNMENT.RIGHT
 
@@ -112,9 +110,6 @@ class CrearCertificacionSaldosAcreedores(ConsultaBD):
         celda_izquierda.add_paragraph('Comisión Fiduciaria')
         celda_derecha = tabla.cell(4,1)
         celda_derecha.add_paragraph(str(self.resultado_consulta[0][11]))
-        for _ in range(1):
-            celda_izquierda.add_paragraph()
-            celda_derecha.add_paragraph()
         
         celda_izquierda = tabla.cell(4,0)
         saldo_total = celda_izquierda.add_paragraph('Saldo Total')

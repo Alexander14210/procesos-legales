@@ -39,14 +39,11 @@ class InsertarDatos(RecibirDemanda):
     
             for tabla, registros in datos.items():
         
-                print(datos)
                
                 
                 columnas = ', '.join((registros.keys()))
                 valores = ', '.join(['%s']*len(registros))
                 consulta_sql = f'INSERT INTO {tabla} ({columnas}) VALUES ({valores})'
-                print(consulta_sql)
-                input()
                 self.cursor.execute(consulta_sql, list(registros.values()))
             self.conexion.commit()
             self.cursor.close()
