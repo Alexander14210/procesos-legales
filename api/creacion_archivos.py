@@ -41,15 +41,12 @@ class CrearCertificacionSaldosAcreedores(ConsultaBD):
             "user": "reto_innova2",
             "password": "123"
         }
-        self.doc = docx
+        self.doc = docx.Document()
         self.extraer_datos_cliente_natural(condicion=condicion)
         self.crear_certificacion()
 
     def crear_certificacion(self):
         #Configuracion de la fuente default para todo el archivo
-        default_style = self.doc.styles['Normal']
-        default_style.font.name = 'Times New Roman'
-        default_style.font.size = Pt(12)
 
         #Configuracion del titulo
         titulo = self.doc.add_paragraph()

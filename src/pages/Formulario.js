@@ -31,25 +31,25 @@ function Formulario() {
 function FormularioPersonaNatural() {
 
   const [cliente, setCliente] = useState({
-    'Numero de cliente': 0,
-    'Nombre': '',
-    'Apellido': '',
-    'Identificacion': '',
-    'Direccion': '',
+    'id_cliente_natural': 0,
+    'nombre': '',
+    'apellido': '',
+    'identificacion': '',
+    'direccion': '',
   });
 
   const [operacionInicial, setOperacionInicial] = useState({
-    'Fecha':'',
-    'Dias mora': 0,
-    'Principal Bank Capital': 0.00,
-    'Interes': 0,
-    'Gastos': 0,
-    'Feci': 0,
-    'Comision Fiduciaria': 0,
-    'Saldo Total': 0.00,
-    'Fecha de ultimo pago': '',
-    'Monto del ultimo pago aplicado': 0.00,
-    'Rango mora consolidado': '',
+    'fecha':'',
+    'dias_mora': 0,
+    'principal_bank_capital': 0.00,
+    'interes': 0,
+    'gastos': 0,
+    'feci': 0,
+    'comision_fiduciaria': 0,
+    'saldo_total': 0.00,
+    'fecha_ultimo_pago': '',
+    'monto_ultimo_pago_aplicado': 0.00,
+    'rango_mora_consolidado': '',
   });
 
   const handleClienteChange = (e) => {
@@ -88,67 +88,67 @@ function FormularioPersonaNatural() {
   <div className="form-column" style={{ flex: 1, marginRight: '10px' }}>
       <div class="form-example">
         <label >Ingrese el nombre del cliente: </label>
-        <input type="text" name="Nombre" id="nombre" value={cliente.Nombre} onChange={handleClienteChange} autoFocus/>
+        <input type="text" name="nombre" id="nombre" value={cliente.nombre} onChange={handleClienteChange} autoFocus/>
       </div>
       <div class="form-example">
         <label >Ingrese el apellido del cliente: </label>
-        <input type="text" name="Apellido" id="apellido" value={cliente.Apellido} onChange={handleClienteChange}/>
+        <input type="text" name="apellido" id="apellido" value={cliente.apellido} onChange={handleClienteChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese la identificación: </label>
-        <input type="text" name="Identificacion" id="identificacion" value={cliente.Identificacion} onChange={handleClienteChange}/>
+        <input type="text" name="identificacion" id="identificacion" value={cliente.identificacion} onChange={handleClienteChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese la dirección: </label>
-        <input type="text" name="Direccion" id="direccion" value={cliente.Direccion} onChange={handleClienteChange}/>
+        <input type="text" name="direccion" id="direccion" value={cliente.direccion} onChange={handleClienteChange}/>
       </div>
   </div>
     <div style={{ flex: 1, marginRight: '10px' }}>
       <div class="form-example">
         <label >Ingrese la fecha: </label>
-        <input type="date" name="Fecha" id="fecha" value={operacionInicial.Fecha} onChange={handleOperacionChange}/>
+        <input type="date" name="fecha" id="fecha" value={operacionInicial.fecha} onChange={handleOperacionChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese los dias de mora: </label>
-        <input type="number" name="Dias mora" id="mora" value={operacionInicial['Dias mora']} onChange={handleOperacionChange}/>
+        <input type="number" name="dias_mora" id="mora" value={operacionInicial['dias_mora']} onChange={handleOperacionChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese el capital: </label>
-        <input type="number" name="Principal Bank Capital" id='capital' value={operacionInicial['Principal Bank Capital']} onChange={handleOperacionChange}/>
+        <input type="number" name='principal_bank_capital' id='capital' value={operacionInicial['principal_bank_capital']} onChange={handleOperacionChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese los intereses: </label>
-        <input type="number" step={'any'} name="Interes" id='interes' value={operacionInicial['Interes']} onChange={handleOperacionChange}/>
+        <input type="number" step={'any'} name="interes" id='interes' value={operacionInicial['interes']} onChange={handleOperacionChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese los gastos: </label>
-        <input type="number" step={'any'} name="Gastos" id='gastos' value={operacionInicial['Gastos']} onChange={handleOperacionChange}/>
+        <input type="number" step={'any'} name="gastos" id='gastos' value={operacionInicial['gastos']} onChange={handleOperacionChange}/>
       </div>
     </div>
     <div style={{ flex: 1 }}>
       <div class="form-example">
         <label >Ingrese el feci: </label>
-        <input type="number" step={'any'} name="Feci" id='feci' value={operacionInicial['Feci']} onChange={handleOperacionChange}/>
+        <input type="number" step={'any'} name="feci" id='feci' value={operacionInicial['feci']} onChange={handleOperacionChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese la comision fiduciaria: </label>
-        <input type="number" name='Comision Fiduciaria' step={'any'} id='feci' value={operacionInicial['Comision Fiduciaria']} onChange={handleOperacionChange}/>
+        <input type="number" name='comision_fiduciaria' step={'any'} id='feci' value={operacionInicial['comision_fiduciaria']} onChange={handleOperacionChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese el saldo total: </label>
-        <input type="number" name='Saldo Total' step={'any'} id='feci' value={operacionInicial['Saldo Total']} onChange={handleOperacionChange}/>
+        <input type="number" name='saldo_total' step={'any'} id='feci' value={operacionInicial['saldo_total']} onChange={handleOperacionChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese la fecha del ultimo pago: </label>
-        <input type="date" name='Fecha de ultimo pago' id='fechaUltimo' value={operacionInicial['Fecha de ultimo pago']} onChange={handleOperacionChange}/>
+        <input type="date" name='fecha_ultimo_pago' id='fechaUltimo' value={operacionInicial['fecha_ultimo_pago']} onChange={handleOperacionChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese el ultimo pago aplicado </label>
-        <input type="number" name='Monto del ultimo pago aplicado' step={'any'} id='montoUltimoPago' value={operacionInicial['Monto del ultimo pago aplicado']} onChange={handleOperacionChange}/>
+        <input type="number" name='monto_ultimo_pago_aplicado' step={'any'} id='montoUltimoPago' value={operacionInicial['monto_ultimo_pago_aplicado']} onChange={handleOperacionChange}/>
       </div>
       <div class="form-example">
         <label >Ingrese el rango de mora </label>
-        <input type="text" name='Rango mora consolidado' id='rango' value={operacionInicial['Rango mora consolidado']} onChange={handleOperacionChange}/>
+        <input type="text" name='rango_mora_consolidado' id='rango' value={operacionInicial['rango_mora_consolidado']} onChange={handleOperacionChange}/>
       </div>
     </div>
   </div>
