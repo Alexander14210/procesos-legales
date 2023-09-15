@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+img {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+
+
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,16 +23,42 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
 }
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+
+
+
+
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
 
 .App-link {
   color: #61dafb;
