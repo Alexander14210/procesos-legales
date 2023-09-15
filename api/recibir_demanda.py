@@ -1,4 +1,3 @@
-import json
 import psycopg2
 from creacion_archivos import CrearCertificacionSaldosAcreedores as CrearCertificacionSA
 
@@ -11,8 +10,8 @@ class RecibirDemanda():
             "password": "123",
             "port":"5432" 
         }
-        self.data = informacion_inicial#json.load(open(informacion_inicial, 'r'))
-        InsertarDatos.insertar_datos(self)
+        self.data = informacion_inicial
+        InsertarDatos.insertar_datos()
         CrearCertificacionSA(tipo_cliente)
     
     def cargar_datos(self):
