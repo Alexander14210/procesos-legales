@@ -51,7 +51,11 @@ class CrearCertificacionSaldosAcreedores(ConsultaBD):
 
     def crear_certificacion(self):
         #Configuracion de la fuente default para todo el archivo
-
+        style = self.doc.styles['Normal']
+        style.font.size = Pt(12)
+        style.font.name ='Times New Roman'
+        for p in self.doc.paragraphs:
+            p.style = style
         #Configuracion del titulo
         titulo = self.doc.add_paragraph()
         titulo.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
@@ -60,24 +64,19 @@ class CrearCertificacionSaldosAcreedores(ConsultaBD):
         
         parrafo_largo = self.doc.add_paragraph()
         parrafo_largo.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
-        texto_certificacion = f"""
-        Yo, **Nombre del Contador Publico Autorizado**, actuando en mi condición de Contador 
-        Público Autorizado de BANESCO (PANAMÁ), S.A, con registro único de contribuyente número 36633-66-264068 D.V. 11, certifico y hago constar que los libros de contabilidad de BANESCO (PANAMA), S.A., arrojan al {str(self.resultado_consulta[0][0])},a favor de dicho Banco por un total de {str(self.resultado_consulta[0][1])}, los siguientes saldos acreedores contra 
-        {str(self.resultado_consulta[0][2])+' '+str(self.resultado_consulta[0][3])}, con identificación/Ruc número {str(self.resultado_consulta[0][4])}, correspondiente a las siguientes obligaciones: 
-        """
+        texto_certificacion = f"""Yo, **Nombre del Contador Publico Autorizado**, actuando en mi condición de Contador Público Autorizado de BANESCO (PANAMÁ), S.A, con registro único de contribuyente número 36633-66-264068 D.V. 11, certifico y hago constar que los libros de contabilidad de BANESCO (PANAMA), S.A., arrojan al {str(self.resultado_consulta[0][0])},a favor de dicho Banco por un total de {str(self.resultado_consulta[0][1])}, los siguientes saldos acreedores contra {str(self.resultado_consulta[0][2])+' '+str(self.resultado_consulta[0][3])}, con identificación/Ruc número {str(self.resultado_consulta[0][4])},correspondiente a las siguientes obligaciones: """
         #Configuracion de la fuente del texto
         parrafo_largo.add_run(texto_certificacion)
         #Doble salto de linea 
-        for _ in range(1):
-            self.doc.add_paragraph()
-        
+        #for _ in range(1):
+            #self.doc.add_paragraph()
         num_pres_producto = self.doc.add_paragraph()
         num_pres_producto.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
         num_pres_producto.add_run(str(self.resultado_consulta[0][5])+' No. '+str(self.resultado_consulta[0][6]))
         saldo_capital = self.doc.add_paragraph()
         #Se agrega una tabla para formatear mejor el texto
         tabla = self.doc.add_table(rows=5,cols=2)
-        tabla.autofit = False
+        tabla.autofit = True
         tabla.alignment = WD_TABLE_ALIGNMENT.CENTER
 
         #Celda de Saldo a capital
@@ -117,15 +116,13 @@ class CrearCertificacionSaldosAcreedores(ConsultaBD):
         celda_derecha = tabla.cell(4,1)
         celda_derecha.add_paragraph(str(self.resultado_consulta[0][12]))
         
-        for _ in range(4):
-            self.doc.add_paragraph()
+        #for _ in range(4):
+         #   self.doc.add_paragraph()
         texto_justificacion_final = """
         {nombre del apoderado del banco}
         Apoderado
         {identificación del apoderado del banco}
         Revisado y Comprobado Correcto
-
-
 
         {nombre del Contador Público Autorizado},
         {idoneidad del Contador Público Autorizado}
