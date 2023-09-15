@@ -58,7 +58,7 @@ function foo2() {
       'Saldo Total': 0.00,
       'Fecha de ultimo pago': '',
       'Monto del ultimo pago aplicado': 0.00,
-      'Rango mora consolidado0': '',
+      'Rango mora consolidado': '',
     },
     'Prestamo': {
       'Numero de prestamo': 0,
@@ -77,7 +77,7 @@ function App() {
       <header className="App-header">
       <Dashboard></Dashboard>
       </header>
-      <h2>Formulario</h2>
+    
       <Formulario></Formulario>
     </div>
   );

@@ -9,6 +9,19 @@ img {
   width: 10%;
 }
 
+form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+form-column {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-example {
+  margin-bottom: 10px;
+}
 
 
 
