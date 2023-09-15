@@ -4,8 +4,15 @@ from creacion_archivos import CrearCertificacionSaldosAcreedores as CrearCertifi
 
 class RecibirDemanda():
     def __init__(self, informacion_inicial, tipo_cliente):
-        self.data = json.load(open(informacion_inicial, 'r'))
-        InsertarDatos.insertar_datos()
+        self.db_config = {
+            "host": "localhost",
+            "database": "reto_innova",
+            "user": "reto_innova2",
+            "password": "123",
+            "port":"5432" 
+        }
+        self.data = informacion_inicial#json.load(open(informacion_inicial, 'r'))
+        InsertarDatos.insertar_datos(self)
         CrearCertificacionSA(tipo_cliente)
     
     def cargar_datos(self):
@@ -16,7 +23,7 @@ class InsertarDatos(RecibirDemanda):
         self.db_config = {
             "host": "localhost",
             "database": "reto_innova",
-            "user": "postgres",
+            "user": "reto_innova2",
             "password": "123",
             "port":"5432" 
         }
@@ -29,7 +36,7 @@ class InsertarDatos(RecibirDemanda):
             
             #Insercion de los datos
             datos = self.cargar_datos()
-            for tabla, registros in datos.item():
+            for tabla, registros in datos.items():
                 for registro in registros:
                     columnas = ', '.join(registro.keys())
                     valores = ', '.join(['%s']*len(registro))

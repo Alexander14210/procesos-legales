@@ -9,20 +9,24 @@ img {
   width: 10%;
 }
 
-form-row {
+/* Contenedor de fila de formulario */
+.form-row {
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Alineación vertical de los campos */
+  margin-bottom: 20px; /* Separación entre filas de formulario */
 }
 
-form-column {
+/* Columna de formulario */
+.form-column {
   flex: 1;
   margin-right: 10px;
 }
 
+/* Ejemplo de campo de formulario */
 .form-example {
   margin-bottom: 10px;
 }
-
 
 
 .App-logo {
