@@ -24,11 +24,14 @@ class ConsultaBD():
         WHERE {condicion}
  """
         conexion = psycopg2.connect(**self.db_config)
-        cursor = execute.
-        return = 
-            
+        cursor = conexion.cursor()
+        cursor.execute(consulta)
+        resultado = cursor.fetchall()
+        return resultado
+              
 class CrearCertificacionSaldosAcreedores(ConsultaBD):
     def __init__(self):
         self.doc = docx
 
     def crear_certificacion(self):
+        
