@@ -42,4 +42,5 @@ class InsertarDatos(RecibirDemanda):
             print('Se insertaron los datos correctamente')
     
         except Exception as e:
-          print(e) 
+          print(e)
+          print(hola)

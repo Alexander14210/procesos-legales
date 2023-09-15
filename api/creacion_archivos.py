@@ -34,4 +34,4 @@ class CrearCertificacionSaldosAcreedores(ConsultaBD):
         self.doc = docx
 
     def crear_certificacion(self):
-        
+        pass

@@ -22,3 +22,4 @@ def handle_email(archivo_json):
 def hello_supervisor():
     return {'name': "SUPERVISOR"}
 
+@hola
